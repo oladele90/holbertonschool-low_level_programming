@@ -14,7 +14,7 @@ n = rand() - RAND_MAX / 2;
 m = n % 10;
 if (m == 0)
 {
-printf("Last digit of %i is 0\n", n);
+printf("Last digit of %i is 0 and is 0\n", n);
 }
 else if (m > 5)
 {
