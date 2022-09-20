@@ -1,0 +1,10 @@
+/**
+*main - Nested loop
+*Return: 0
+*/
+#include "main.h"
+int main(void)
+{
+printput;
+return (0);
+}
