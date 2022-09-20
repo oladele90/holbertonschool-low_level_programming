@@ -6,6 +6,6 @@
  *Return: on success 1 and on error -1
  */
 
-int _putchar(int)
+int _putchar(int);
 #endif
   
