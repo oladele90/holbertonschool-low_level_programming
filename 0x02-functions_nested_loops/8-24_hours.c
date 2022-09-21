@@ -10,10 +10,12 @@ int m = 0;
  int o = 0;
  int p = 0;
  
- while (n <= 2 || m <= 3)
+ while (n <= 2)
    {
      while (m <= 9)
        {
+	 while (n <= 2 && m <= 3)
+	   {
 	 while (o <= 5)
 	   {
 	     while (p <= 9)
@@ -34,6 +36,7 @@ int m = 0;
        }
      n++;
      m = 0;
+   }
    }
  return;
 }
