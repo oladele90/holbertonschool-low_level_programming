@@ -10,14 +10,29 @@ int m = 0;
  int o = 0;
  int p = 0;
  
- while (n <= 2 && m <= 3)
+ while (n <= 2)
    {
-     _putchar('0' + n);
+     while (m <= 3)
+       {
+	 while (o <= 5)
+	   {
+	     while (p <= 9)
+	       {
        _putchar('0' + m);
        _putchar(':');
        _putchar('0' + o);
        _putchar('0' + p);
        _putchar('\n');
+       n++;
+       m++;
+       o++;
        p++;
+	       }
+	     p = 0;
+	   }
+	 o = 0;
+       }
+     m = 0;
    }
+ n = 0;
 }
