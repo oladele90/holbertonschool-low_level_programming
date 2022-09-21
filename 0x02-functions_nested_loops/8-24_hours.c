@@ -17,6 +17,7 @@ int m = 0;
        _putchar(':');
        _putchar('0' + o);
        _putchar('0' + p);
-       n++;
+       _putchar('\n');
+       p++;
    }
 }
