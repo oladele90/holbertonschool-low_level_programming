@@ -16,26 +16,26 @@ l = (m * n);
 _putchar(l + '0');
 _putchar(',');
 _putchar(' ');
+ n++;
    }
  else
    {
 _putchar(l);
 _putchar(',');
 _putchar(' ');
+ n++;
    }
-n++;
-}
+ 
+ }
  if (l <= 9)
    {
 _putchar(l + '0');
-n = 0;
-m++;
    }
  else
 {
 _putchar(l + '0');
-n = 0;
-m++;
+ }
 }
-}
+ n = 0;
+ m++;
 }
