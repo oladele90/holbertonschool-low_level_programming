@@ -18,7 +18,7 @@ int m = 0;
 	   {
 	     while (p <= 9)
 	       {
-		 if (n <= 2 && m <= 3)
+		 if (n <= 2 || m <= 3)
 		   {
 		     
        _putchar('0' + n);
