@@ -10,9 +10,9 @@ int m = 0;
  int o = 0;
  int p = 0;
  
- while (n <= 2)
+ while (n <= 2 && m <= 3)
    {
-     while (m <= 3)
+     while (m <= 9)
        {
 	 while (o <= 5)
 	   {
