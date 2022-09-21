@@ -24,16 +24,15 @@ int m = 0;
        _putchar('0' + o);
        _putchar('0' + p);
        _putchar('\n');
-       n++;
-       m++;
-       o++;
        p++;
 	       }
+	     o++;
 	     p = 0;
 	   }
+	 m++
 	 o = 0;
        }
+     n++
      m = 0;
    }
- n = 0;
 }
