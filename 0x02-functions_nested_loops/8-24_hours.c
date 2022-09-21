@@ -18,6 +18,7 @@ int m = 0;
 	   {
 	     while (p <= 9)
 	       {
+       _putchar('0' + n);
        _putchar('0' + m);
        _putchar(':');
        _putchar('0' + o);
