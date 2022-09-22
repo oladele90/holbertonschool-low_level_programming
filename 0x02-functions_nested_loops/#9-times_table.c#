@@ -1,0 +1,16 @@
+#include "main.h"
+/**
+*times_table - print times table.
+*Return:
+*/
+void times_table(void)
+{
+  int l = 0, m;
+  while (l <= 9)
+    {
+    _putchar('0');
+    for  (m <= 9)
+      {
+	m = (l + l);
+	
+  
