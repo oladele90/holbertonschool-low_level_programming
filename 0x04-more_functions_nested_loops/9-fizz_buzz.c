@@ -1,17 +1,15 @@
 #include <stdio.h>
-#include <stdlib.h>
 
 /**
- *
  *main - maka da buzz
  *
  *Return: o
- *
  */
 
 int main(void)
 {
 	int i = 1;
+
 	while (i <= 100)
 	{
 	if (i % 15 <= 0)
@@ -26,6 +24,7 @@ int main(void)
 	}
 	i++;
 	}
+	putchar('\b');
 	putchar('\n');
 	return (0);
 }
