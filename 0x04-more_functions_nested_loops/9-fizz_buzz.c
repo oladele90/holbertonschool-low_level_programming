@@ -10,7 +10,7 @@ int main(void)
 {
 	int i = 1;
 
-	while (i <= 100)
+	while (i <= 99)
 	{
 	if (i % 15 <= 0)
 		printf("FizzBuzz");
@@ -23,7 +23,7 @@ int main(void)
 	putchar(' ');
 	i++;
 	}
-	putchar('\b');
+	printf("Buzz");
 	putchar('\n');
 	return (0);
 }
