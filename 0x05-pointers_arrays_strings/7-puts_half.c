@@ -13,7 +13,7 @@ void puts_half(char *str)
 
 	while (*(str + count) != '\0')
 	{
-		count++;
+		++count;
 	}
 	if (count % 2 == 0)
 	{
@@ -24,7 +24,7 @@ void puts_half(char *str)
 	}
 	if (count % 2 != 0)
 	{
-		for (i = ((count / 2) - 1); ((i  < count) && (i != '\0')); i++)
+		for (i = ((count -1) / 2); ((i  < count) && (i != '\0')); i++)
 		{
 			_putchar(str[i]);
 		}
