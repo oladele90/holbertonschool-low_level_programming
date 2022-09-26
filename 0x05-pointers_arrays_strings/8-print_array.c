@@ -12,7 +12,7 @@ void print_array(int *a, int n)
 {
 	int count;
 
-	for (count = 0; count <= a[n -1]; count++)
+	for (count = 0; ((count <= a[n -1]) && (count != '\0')); count++)
 	{
 		printf("%i, ", a[count]);
 	}
