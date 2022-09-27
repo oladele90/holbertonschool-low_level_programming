@@ -12,10 +12,14 @@ void print_array(int *a, int n)
 {
 	int count = 0;
 
-	while ((a[count] < a[n]) && (a[count] != '\0'))
+	while (count < n - 1)
 	{
 		printf("%i, ", a[count]);
 		count++;
+		if (count == n - 1)
+		{
+			printf("%i", a[count]);
+		}
 	}
 	printf("\n");
 }
