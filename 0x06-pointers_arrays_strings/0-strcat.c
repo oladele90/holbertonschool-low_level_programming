@@ -1,16 +1,17 @@
 #include "holberton.h"
 
 /**
- * strcat - concatenate two strings
- *
+ * _strcat - concatenate two strings
+ *@dest: ponter to string that should be returned
+ *@src: ponter to string to be appended to dest
  * Return: Always 0.
  */
 
 char *_strcat(char *dest, char *src)
 {
-	int len1 = 0, len2 = 0 , i;
+	int len1 = 0, len2 = 0, i;
 
-	while(*(dest + len1))
+	while (*(dest + len1))
 	{
 		len1++;
 	}
@@ -22,5 +23,5 @@ char *_strcat(char *dest, char *src)
 	{
 		dest[len1++] = src[i];
 	}
-	return(dest);
+	return (dest);
 }
