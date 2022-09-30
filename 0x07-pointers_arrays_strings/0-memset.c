@@ -1,0 +1,21 @@
+#include "main.h"
+
+/**
+ *_memset - fills array with n amount of chars
+ *@n: amount of characters to fill array with
+ *@s: pointer to memory area
+ *@b: constant byte to fill memory area with
+ *Return: pointer s
+ */
+
+char *_memset(char *s, char b, unsigned int n)
+{
+	unsigned int i = 0;
+
+	while (i < n)
+	{
+		s[i] = b;
+		i++;
+	}
+	return (s);
+}
