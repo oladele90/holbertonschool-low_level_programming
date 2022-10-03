@@ -1,0 +1,27 @@
+/**
+ * _strspn - check for first occorence of characters fron string not in original 
+ * string
+ * @s: original string
+ * @accept: string of characters to check for
+ * Return: Always 0.
+ */
+
+unsigned int _strspn(char *s, char *accept)
+{
+        unsigned int i = 0, k = 0, t = 1;
+
+                while (s[i] != accept[k] && accept[k] != '\0')
+                {
+                        k++;
+                        if (s[i] == accept[k])
+                        {
+                                k = 0;
+                                i++;
+				t++;
+                        }
+		}
+		if (accept[k] != '\0')
+			return (t);
+		else
+			return ('\0');
+}
