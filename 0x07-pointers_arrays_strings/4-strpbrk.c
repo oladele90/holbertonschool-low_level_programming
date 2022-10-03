@@ -1,0 +1,29 @@
+#include <stddef.h>
+#include "main.h"
+
+/**
+ * _strpbrk - check for first occurence of characters from string
+ * @s: original string
+ * @accept: string of characters to check for
+ * Return: Always 0.
+ */
+
+char *_strpbrk(char *s, char *accept)
+{
+	int i = 0, c = 0 ;
+
+	while (s[i] != '\0')
+	{
+		while (accept[c] != '\0')
+		{
+			if (s[i] == accept[c])
+			{
+				return (s + i);
+			}
+			c++;
+		}
+		i++;
+		c = 0;
+	}
+	return (NULL);
+}
