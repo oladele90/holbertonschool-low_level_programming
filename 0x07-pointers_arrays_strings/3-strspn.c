@@ -10,25 +10,24 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int i = 0, k = 0, t = 1;
+	unsigned int i = 0, k = 0;
 
-	if (s[i] == accept[k])
+	while (s[i] != '\0')
 	{
-		t++;
-		i++;
-	}
-	while (s[i] != accept[k] && accept[k] != '\0')
+		while (accept[k] != '\0')
 		{
-			k++;
 			if (s[i] == accept[k])
 			{
-			k = 0;
-			i++;
-			t++;
+				k = 0;
+				break;
 			}
+			else
+				k++;
 		}
-	if (accept[k] != '\0')
-		return (t);
-	else
-		return ('\0');
+		if (accept[k] == '\0')
+			return (i);
+		else
+			i++;
+	}
+		return (i);
 }
