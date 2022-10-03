@@ -12,12 +12,12 @@ unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int i = 0, k = 0, t = 1;
 
-	while (s[i] == accept[k] && s[i] && accept[k])
+	while (s[i] == accept[k] && s[i] != '\0')
 	{
 		i++;
 		t++;
 	}
-	while (s[i] != accept[k] && accept[k] && s[i])
+	while (s[i] != accept[k] && accept[k] != '\0' && s[i] != '\0')
 	{
 		k++;
 		if (s[i] == accept[k])
