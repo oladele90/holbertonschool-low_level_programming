@@ -17,7 +17,7 @@ unsigned int _strspn(char *s, char *accept)
 		i++;
 		t++;
 	}
-	while (s[i] != accept[k] && accept[k])
+	while (s[i] != accept[k] && accept[k] && s[i])
 	{
 		k++;
 		if (s[i] == accept[k])
