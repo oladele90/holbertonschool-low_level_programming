@@ -1,0 +1,36 @@
+#include "main.h"
+
+/**
+ * check_prime - check to see if number is prime using recursion
+ * @x: number to check for prime
+ * @y: return value
+ * Return: 0 if not prime and 1 if prime
+ */
+
+int check_prime(int x, int y)
+{
+	if (y == x)
+	{
+		return (1);
+	}
+	if ((x % y) == 0)
+	{
+		return (0);
+	}
+	return (check_prime(x, (y + 1)));
+}
+
+/**
+ *is_prime_number - returns true or false for primeness of number
+ * @n: number that needs to be checked
+ * Return: 0 for not prime and 1 for prime
+ */
+
+int is_prime_number(int n)
+{
+	if (n <= 1)
+	{
+		return (0);
+	}
+	return (check_prime(n, 2));
+}
