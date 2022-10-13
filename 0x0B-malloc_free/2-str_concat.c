@@ -28,11 +28,10 @@ while (s2[j] != '\0')
 }
 j++;
 str = malloc(sizeof(*str) * (i + j));
+if (!str)
 {
-	if (!str)
-	{
-		return (NULL);
-	}
+	return (NULL);
+}
 for (i = 0; s1[i] != '\0'; i++)
 {
 	str[i] = s1[i];
