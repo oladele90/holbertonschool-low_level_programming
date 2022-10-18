@@ -7,6 +7,7 @@
  * @s1: first string
  * @s2: second string
  * @n: amount of second string to concatenate
+ * Return: pointer to concatted array
  */
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
@@ -24,13 +25,13 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	f = (i + n);
 	array = malloc(sizeof(char) * (f + 1));
 	if (!array)
-		return(NULL);
+		return (NULL);
 	while (s1[p] != '\0')
 	{
 		array[p] = s1[p];
 		p++;
 	}
-	while ((s2[s] != '\0') && (p < f))
+	while ((s2[s] != '\0') && (s < n))
 	{
 		array[p] = s2[s];
 		p++;
