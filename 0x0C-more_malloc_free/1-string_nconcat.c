@@ -22,7 +22,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	while (s1[i] != '\0')
 		i++;
 	f = (i + n);
-	array = malloc(sizeof(char) *(f + 1));
+	array = malloc(sizeof(char) * (f + 1));
 	if (!array)
 		return(NULL);
 	while (s1[p] != '\0')
@@ -30,7 +30,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		array[p] = s1[p];
 		p++;
 	}
-	while ((s2[s] != '\0') && (p <= f))
+	while ((s2[s] != '\0') && (p < f))
 	{
 		array[p] = s2[s];
 		p++;
