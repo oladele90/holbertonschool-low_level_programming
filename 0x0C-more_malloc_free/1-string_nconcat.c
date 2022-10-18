@@ -11,7 +11,7 @@
 
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	unsigned int i = 0, j = 0, p = 0, s = 0, f;
+	unsigned int i = 0, p = 0, s = 0, f;
 	char *array;
 
 
@@ -22,10 +22,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	while (s1[i] != '\0')
 		i++;
 	i--;
-	while ((j <= n) && (s2[j] != '\0'))
-		j++;
-	j--;
-	f = (i + j);
+	f = (i + n);
 	array = malloc(sizeof(char) *(f + 1));
 	if (!array)
 		return(NULL);
