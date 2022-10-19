@@ -30,5 +30,6 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		i[n] = 0;
 		n++;
 	}
+	free(array);
 	return (array);
 }
