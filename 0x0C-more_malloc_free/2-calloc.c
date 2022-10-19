@@ -15,6 +15,13 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	void *array = malloc(nmemb * size);
 	unsigned int n = 0;
 
+	if (!array)
+	{
+		free(array);
+		return (NULL);
+	}
+	if ((nmemb <= 0) || (size <= 0))
+		return (NULL);
 	i = array;
 
 	while (n < (nmemb * size))
