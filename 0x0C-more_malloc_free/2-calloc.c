@@ -12,9 +12,10 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	char *i;
-	void *array = malloc(nmemb * size);
+	void *array;
 	unsigned int n = 0;
 
+	array = malloc(nmemb * size);
 	if (!array)
 	{
 		free(array);
