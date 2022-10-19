@@ -15,14 +15,14 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	void *array;
 	unsigned int n = 0;
 
+	if ((nmemb <= 0) || (size <= 0))
+                return (NULL);
 	array = malloc(nmemb * size);
+
 	if (!array)
 	{
-		free(array);
 		return (NULL);
 	}
-	if ((nmemb <= 0) || (size <= 0))
-		return (NULL);
 	i = array;
 
 	while (n < (nmemb * size))
@@ -30,6 +30,5 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		i[n] = 0;
 		n++;
 	}
-	free(array);
 	return (array);
 }
