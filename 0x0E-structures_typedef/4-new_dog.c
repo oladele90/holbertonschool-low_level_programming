@@ -10,6 +10,27 @@
  */
 
 
+/**
+ * _strcpy - Copies a string pointed to by @src, including the
+ *           terminating null byte, to a buffer pointed to by @dest.
+ * @dest: A buffer to copy the string to.
+ * @src: The source string to copy.
+ *
+ * Return: A pointer to the destination string @dest.
+ */
+char *_strcpy(char *dest, char *src)
+{
+        int index = 0;
+
+        while (src[index])
+        {
+                dest[index] = src[index];
+                index++;
+        }
+
+        return (dest);
+}
+
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *gary;
@@ -23,14 +44,16 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	gary = malloc(sizeof(dog_t));
 	if (!gary)
+	{
+		free(gary);
 		return (NULL);
+	}
 	gary->name = malloc(sizeof(char) * (i + 1));
 	if (gary->name == NULL)
 	{
 		free(gary->name);
 		return (NULL);
 	}
-	gary->name = name;
 	gary->age = age;
 	gary->owner = malloc(sizeof(char) * (j + 1));
 	if (gary->owner == NULL )
@@ -38,6 +61,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(gary->owner);
 		return (NULL);
 	}
-	gary->owner = owner;
+	_strcpy(gary->name,  name);
+	_strcpy(gary->owner, owner);
 	return (gary);
 }
