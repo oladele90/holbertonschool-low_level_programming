@@ -1,14 +1,6 @@
 #include "dog.h"
 #include <stdlib.h>
 #include <stdio.h>
-/**
- * new_dog - cretes new dog
- * @name: name of dog
- * @age: age of dog
- * @owner: owner of dog
- * Return: struct
- */
-
 
 /**
  * _strcpy - Copies a string pointed to by @src, including the
@@ -20,16 +12,24 @@
  */
 char *_strcpy(char *dest, char *src)
 {
-        int index = 0;
+int index = 0;
 
-        while (src[index])
-        {
-                dest[index] = src[index];
-                index++;
-        }
-	dest[index] = '\0';
-        return (dest);
+while (src[index])
+{
+	dest[index] = src[index];
+	index++;
 }
+dest[index] = '\0';
+return (dest);
+}
+
+/**
+* new_dog - cretes new dog
+* @name: name of dog
+* @age: age of dog
+* @owner: owner of dog
+* Return: struct
+*/
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
@@ -48,15 +48,17 @@ dog_t *new_dog(char *name, float age, char *owner)
 		free(gary);
 		return (NULL);
 	}
-	gary->name = malloc(sizeof(char) * (i + 1));
+	gary->name = malloc(i + 1);
 	if (gary->name == NULL)
 	{
-		return (NULL);
+		free(gary->name);
+			return (NULL);
 	}
 	gary->age = age;
-	gary->owner = malloc(sizeof(char) * (j + 1));
-	if (gary->owner == NULL )
+	gary->owner = malloc(j + 1);
+	if (gary->owner == NULL)
 	{
+		free(gary->owner);
 		return (NULL);
 	}
 	_strcpy(gary->name,  name);
