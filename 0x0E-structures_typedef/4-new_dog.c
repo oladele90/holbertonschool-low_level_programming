@@ -9,6 +9,7 @@
  * Return: struct
  */
 
+
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *gary;
@@ -18,8 +19,20 @@ dog_t *new_dog(char *name, float age, char *owner)
 	gary = malloc(sizeof(dog_t));
 	if (!gary)
 		return (NULL);
+	gary->name = malloc(sizeof(name));
+	if (gary->name == NULL)
+	{
+		free(gary->name);
+		return (NULL);
+	}
 	gary->name = name;
 	gary->age = age;
+	gary->owner = malloc(sizeof(owner));
+	if (gary->owner == NULL )
+	{
+		free(gary->owner);
+		return (NULL);
+	}
 	gary->owner = owner;
 	return (gary);
 }
