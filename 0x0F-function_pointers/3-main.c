@@ -15,19 +15,20 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		printf("Error\n");
 		exit (98);
 	}
+	num1 =  atoi(argv[1]);
+	num2 = atoi(argv[3]);
 	op = argv[2];
 	if (get_op_func(op) == NULL)
 	{
 		printf("Error\n");
 		exit (99);
 	}
-	if (argv[2] == "/" && argv[3] == "0"
-	    || argv[2] == "%" && argv[3] == "0")
+	if ((argv[2] == "/" && argv[3] == 0)
+	    || (argv[2] == "%" && argv[3] == 0))
 	{
 		printf("Error\n");
 		exit (100);
 	}
-	num1 = argv[1];
-	num2 = argv[3];
 	printf("%d\n", get_op_func(op)(num1, num2));
 	return (0);
+}
