@@ -23,8 +23,8 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		printf("Error\n");
 		exit (99);
 	}
-	if ((argv[2] == "/" && argv[3] == 0)
-	    || (argv[2] == "%" && argv[3] == 0))
+	if ((*op == '/' && num2 == 0)
+	    || (*op == '%' && num2 == 0))
 	{
 		printf("Error\n");
 		exit (100);
