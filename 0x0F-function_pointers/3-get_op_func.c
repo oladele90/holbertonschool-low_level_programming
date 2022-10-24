@@ -14,5 +14,5 @@ int (*get_op_func(char *s))(int, int)
 
 	if (ops[i] != s && ops[i] != NULL)
 		i++;
-	return (ops[i]);
+	return (ops[i].f);
 }
