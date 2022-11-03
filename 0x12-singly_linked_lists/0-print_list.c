@@ -1,0 +1,33 @@
+#include "lists.h"
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+
+/**
+ * print_list - prints elements of all nodes in linked list
+ * @h: pointer to node in linked list
+ * Return: an unsigned integer thet represents total amount of nodes in list
+ */
+
+size_t print_list(const list_t *h)
+{
+	unsigned int count = 0;
+	const list_t *temp = h;
+
+	while (temp)
+	{
+		if (temp->str == NULL)
+		{
+			printf("[0] (nil)\n");
+			temp = temp->next;
+			count++;
+		}
+		else
+		{
+			printf("[%i] %s\n", temp->len, temp->str);
+			temp = temp->next;
+			count++;
+		}
+	}
+	return (count);
+}
