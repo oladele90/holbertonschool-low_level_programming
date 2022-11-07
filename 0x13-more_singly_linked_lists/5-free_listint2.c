@@ -11,13 +11,13 @@
 
 void free_listint2(listint_t **head)
 {
-        listint_t *voider;
+listint_t *voider;
 
-        while (*head != NULL)
-        {
-                voider = (*head)->next;
-                free(*head);
-                *head = voider;
-        }
-	head = NULL;
+while (*head != NULL)
+{
+	voider = (*head)->next;
+	free(*head);
+	*head = voider;
+}
+head = NULL;
 }
