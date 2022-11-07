@@ -1,0 +1,33 @@
+#include <stdlib.h>
+#include <string.h>
+#include <stdio.h>
+#include "lists.h"
+
+/**
+ * add_nodeint_end - add node at end of list
+ * @head: pointer to pointer of struct
+ * @n: integer stored inside of struct
+ * Return: pointer to new struct
+ */
+listint_t *add_nodeint_end(listint_t **head, const int n)
+{
+	listint_t *front, *end;
+
+	front = malloc(sizeof(listint_t));
+	if (!front)
+	{
+		free(front);
+		return (NULL);
+	}
+	front->n = n;
+	if (*head == NULL)
+		*head = front;
+	else
+	{
+		end = *head;
+		while (end->next != NULL)
+			end = end->next;
+		end->next = front;
+	}
+	return (*head);
+}
