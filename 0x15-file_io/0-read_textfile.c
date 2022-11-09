@@ -20,8 +20,14 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (!buf)
 		return (0);
 	o = open(filename, 000);
+	if (o == -1)
+		return (0);
 	r = read(o, buf, letters);
+	if (r == -1)
+		return (0);
 	w = write(1, buf, r);
+	if (w == -1 || w != r)
+		return (0);
 	close(o);
 	return (w);
 }
