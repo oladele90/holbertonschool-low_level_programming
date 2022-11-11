@@ -19,11 +19,11 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		free(my_hash);
 		return (0);
 	}
-	if (key == NULL)
+	if (key == NULL || key[1] == NULL)
 		return (0);
 	my_hash->key = strdup(key);
 	if (value == NULL)
-		my_hash->value = "";
+		return (0);
 	else
 		my_hash->value = strdup(value);
 	hash = key_index((unsigned char *)key, ht->size);
