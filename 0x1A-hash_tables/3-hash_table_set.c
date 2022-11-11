@@ -19,7 +19,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		free(my_hash);
 		return (0);
 	}
-	if (key == NULL || key[1] == NULL)
+	if (key == NULL || key[1] == '\0')
 		return (0);
 	my_hash->key = strdup(key);
 	if (value == NULL)
