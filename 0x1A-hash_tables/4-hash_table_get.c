@@ -20,11 +20,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	while (node)
 	{
 		if (strcmp(node->key, key) == 0)
-		{
-			if (node->value == NULL)
-				return (NULL);
 			return (node->value);
-		}
 		node = node->next;
 	}
 		return (NULL);
