@@ -12,7 +12,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	unsigned int hash;
 	hash_node_t *my_hash;
-
+	char *val_copy = strdup(value);
 	if (ht == NULL)
 		return (0);
 	my_hash = malloc(sizeof(hash_node_t));
@@ -32,8 +32,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (strcmp(ht->array[hash]->key, key) == 0)
 		{
-			my_hash->next = ht->array[hash]->next;
-			ht->array[hash] = my_hash;
+			free(ht->array[hash]->value);
+			ht->array[hash]->value = val_copy;
 			return (1);
 		}
 	}
