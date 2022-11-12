@@ -28,6 +28,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	my_hash->value = strdup(value);
 	hash = key_index((unsigned char *)key, ht->size);
+	while (ht->array[hash])
+		if (strcmp(ht->array[hash]->key, key) == 0)
+		{
+			ht->array[hash]->value = strdup(value);
+			return (1);
+		}
 	if (ht->array[hash] != NULL)
 	{
 		my_hash->next = ht->array[hash];
