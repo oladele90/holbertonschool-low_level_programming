@@ -32,7 +32,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (strcmp(ht->array[hash]->key, key) == 0)
 		{
-			ht->array[hash]->value = strdup(value);
+			my_hash->next = ht->array[hash]->next;
+			ht->array[hash] = my_hash;
 			return (1);
 		}
 	}
