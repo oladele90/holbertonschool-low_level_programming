@@ -11,7 +11,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
 	dlistint_t *node;
 
-	if (n > 2147483647 || n < -2147483647)
+	if (n > 2147483647 || n < (-2147483647 - 1))
 		return (NULL);
 	node = malloc(sizeof(dlistint_t));
 	if (!node)
