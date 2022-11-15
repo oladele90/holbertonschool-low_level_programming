@@ -11,6 +11,8 @@ size_t print_dlistint_backward(const dlistint_t *h)
 	const dlistint_t *node;
 	unsigned int i = 0;
 
+	if (h == NULL)
+		return (0);
 	for (node = h; node->next != NULL; node = node->next)
 		;
 	for (; node != NULL; node = node->prev)
