@@ -1,0 +1,1 @@
+read me for linear and binary search algos
