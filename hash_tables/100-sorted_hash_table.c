@@ -149,7 +149,7 @@ int set_h(shash_table_t *ht, shash_node_t *new_node)
 	{
 		temp_node = ht->shead;
 
-		for (; temp_node->snext != NULL; temp_node = temp_node->snext)
+		for (; temp_node != NULL; temp_node = temp_node->snext)
 		{
 			if (strcmp(new_node->key, temp_node->key) < 0)
 			{
@@ -162,6 +162,8 @@ int set_h(shash_table_t *ht, shash_node_t *new_node)
 					ht->shead = new_node;
 				return (0);
 			}
+			if (!temp_node->snext)
+				break;
 		}
 		temp_node->snext = new_node;
 		new_node->sprev = temp_node;
