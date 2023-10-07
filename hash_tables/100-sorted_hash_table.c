@@ -43,12 +43,13 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	if (value == NULL)
 		return (0);
 	new->value = strdup(value);
+	new->snext = NULL;
+	new->sprev = NULL;
 	hash = key_index((unsigned char *)key, ht->size);
 	if (ht->array[hash] != NULL)
 	{
 		new->next = ht->array[hash];
 		ht->array[hash] = new;
-		return (1);
 	}
 	ht->array[hash] = new;
 	set_h(ht, new);
@@ -147,9 +148,7 @@ int set_h(shash_table_t *ht, shash_node_t *new_node)
 	}
 	else
 	{
-		temp_node = ht->shead;
-
-		for (; temp_node != NULL; temp_node = temp_node->snext)
+		for (temp_node = ht->shead; temp_node != NULL; temp_node = temp_node->snext)
 		{
 			if (strcmp(new_node->key, temp_node->key) < 0)
 			{
