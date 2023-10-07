@@ -46,14 +46,14 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	if (ht == NULL)
 		return (0);
 	hash = key_index((unsigned char *)key, ht->size);
-	for(temp = ht->array[hash]; temp != NULL; temp = temp->next)
+	for (temp = ht->array[hash]; temp != NULL; temp = temp->next)
 	{
 		if (strcmp(temp->key, key) == 0)
-			{
-				free(temp->value);
-				temp->value = strdup(value);
-				return (1);
-			}
+		{
+			free(temp->value);
+			temp->value = strdup(value);
+			return (1);
+		}
 	}
 	new = malloc(sizeof(shash_node_t));
 	if (!new)
@@ -90,9 +90,9 @@ void shash_table_print(const shash_table_t *ht)
 {
 	shash_node_t *temp_node;
 
-	temp_node = ht->shead;
 	if (ht == NULL)
 		exit(EXIT_FAILURE);
+	temp_node = ht->shead;
 	printf("{");
 	printf("'%s': '%s'", temp_node->key, temp_node->value);
 	temp_node = temp_node->snext;
@@ -114,9 +114,9 @@ void shash_table_print_rev(const shash_table_t *ht)
 {
 	shash_node_t *temp_node;
 
-	temp_node = ht->stail;
 	if (ht == NULL)
 		exit(EXIT_FAILURE);
+	temp_node = ht->stail;
 	printf("{");
 	printf("'%s': '%s'", temp_node->key, temp_node->value);
 	temp_node = temp_node->sprev;
